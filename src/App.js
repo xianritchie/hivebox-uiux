@@ -24,38 +24,7 @@ import Home from './Home';
 import Settings from './Settings';
 import Dashboard from './Dashboard';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.secondary.main,
-    fontSize: theme.typography.fontSize,
-    fontWeight: theme.typography.fontWeight,
-    padding: theme.spacing.small,
-    borderRadius: theme.spacing.unit,
-    '&:hover': {
-      backgroundColor: theme.overrides.MuiListItem.button['&:hover'].backgroundColor,
-    },
-  },
-  drawer: {
-    backgroundColor: theme.overrides.MuiDrawer.paper.backgroundColor,
-  },
-  button: {
-    textTransform: theme.overrides.MuiButton.label.textTransform,
-  },
-  h5: {
-    fontWeight: theme.overrides.MuiTypography.h5.fontWeight,
-  },
-  primaryText: {
-    fontWeight: theme.overrides.MuiListItemText.primary.fontWeight,
-  },
-  appBar: {
-    backgroundColor: theme.overrides.MuiAppBar.colorPrimary.backgroundColor,
-  },
-}));
-
-
-export default function App() {
-  const theme = createTheme({
+const theme = createTheme({
   overrides: {
     MuiDrawer: {
       paper: {
@@ -99,7 +68,39 @@ export default function App() {
     },
   },
 });
- 
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.secondary.main,
+    fontSize: theme.typography.fontSize,
+    fontWeight: theme.typography.fontWeight,
+    padding: theme.spacing.small,
+    borderRadius: theme.spacing.unit,
+    '&:hover': {
+      backgroundColor: theme.overrides.MuiListItem.button['&:hover'].backgroundColor,
+    },
+  },
+  drawer: {
+    backgroundColor: theme.overrides.MuiDrawer.paper.backgroundColor,
+  },
+  button: {
+    textTransform: theme.overrides.MuiButton.label.textTransform,
+  },
+  h5: {
+    fontWeight: theme.overrides.MuiTypography.h5.fontWeight,
+  },
+  primaryText: {
+    fontWeight: theme.overrides.MuiListItemText.primary.fontWeight,
+  },
+  appBar: {
+    backgroundColor: theme.overrides.MuiAppBar.colorPrimary.backgroundColor,
+  },
+}));
+
+
+export default function App() {
+  
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
