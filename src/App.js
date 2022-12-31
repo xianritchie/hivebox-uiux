@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@mui/styles';
-import { createTheme, ThemeProvider } from '@mui/styles';
+import { makeStyles, ThemeProvider } from '@mui/styles';
+import { createTheme, createTheme } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -23,6 +23,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Home from './Home';
 import Settings from './Settings';
 import Dashboard from './Dashboard';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,8 +55,9 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
 }));
 
-function App() {
-  const classes = useStyles();
+export default function App() {
+  const theme = createTheme();
+ 
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -78,6 +80,7 @@ const handleDrawerToggle = () => {
 };
 
  return (
+   <ThemeProvider theme={theme}>
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
@@ -158,12 +161,6 @@ const handleDrawerToggle = () => {
         </Routes>
       </main>
     </div>
+<ThemeProvider>
   );
-}
-
-ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <App />
-  </ThemeProvider>,
-  document.getElementbyId('root')
-);
+};
