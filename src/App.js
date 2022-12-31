@@ -166,6 +166,12 @@ const handleDrawerToggle = () => {
           keepMounted: true, // Better open performance on mobile.
         }}
       >
+         <div>
+      <MenuItem>Menu item 1</MenuItem>
+      <Menu>
+        <MenuItem>Menu item 2</MenuItem>
+      </Menu>
+    </div>
         <div className={classes.toolbar} />
         <List>
           <ListItem button component={Link} to="/">
