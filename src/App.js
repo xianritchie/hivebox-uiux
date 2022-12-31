@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
+import { createTheme, ThemeProvider } from '@mui/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -53,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
 }));
 
-export default function App() {
+function App() {
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -158,4 +159,11 @@ const handleDrawerToggle = () => {
       </main>
     </div>
   );
-};
+}
+
+ReactDOM.render(
+  <ThemeProvider theme={theme}>
+    <App />
+  </ThemeProvider>,
+  document.getElementbyId('root')
+);
