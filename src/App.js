@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles, MuiThemeProvider } from '@mui/styles';
-import { createMuiTheme } from '@mui/material';
+import { makeStyles, ThemeProvider } from '@mui/styles';
+import { createTheme } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -24,7 +24,7 @@ import Home from './Home';
 import Settings from './Settings';
 import Dashboard from './Dashboard';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   overrides: {
     MuiDrawer: {
       paper: {
@@ -123,7 +123,7 @@ const handleDrawerToggle = () => {
 };
 
  return (
-   <MuiThemeProvider theme={theme}>
+   <ThemeProvider theme={theme}>
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
@@ -204,6 +204,6 @@ const handleDrawerToggle = () => {
         </Routes>
       </main>
     </div>
-</MuiThemeProvider>
+</ThemeProvider>
   );
 };
