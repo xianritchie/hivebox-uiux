@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, ThemeProvider } from '@mui/styles';
-import { createTheme, createTheme } from '@mui/material';
+import { createTheme } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
