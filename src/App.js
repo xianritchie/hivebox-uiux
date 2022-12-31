@@ -69,7 +69,7 @@ const theme = createTheme({
   },
 });
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.secondary.main,
