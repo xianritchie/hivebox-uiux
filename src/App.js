@@ -161,6 +161,6 @@ const handleDrawerToggle = () => {
         </Routes>
       </main>
     </div>
-<ThemeProvider>
+</ThemeProvider>
   );
 };
