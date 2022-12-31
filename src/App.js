@@ -18,7 +18,7 @@ import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import Home from './Home';
 import Settings from './Settings';
 import Dashboard from './Dashboard';
@@ -144,7 +144,7 @@ const handleDrawerToggle = () => {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Switch>
+        <Routes>
           <Route exact path="/">
             <Home />
           </Route>
@@ -154,7 +154,7 @@ const handleDrawerToggle = () => {
           <Route path="/settings">
             <Settings />
           </Route>
-        </Switch>
+        </Routes>
       </main>
     </div>
   );
