@@ -1,5 +1,5 @@
 import React from 'react';
-import makeStyles from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
