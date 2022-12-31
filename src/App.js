@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, ThemeProvider } from '@mui/styles';
+import { ThemeProvider } from '@mui/styles';
 import { createTheme } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
@@ -25,38 +25,53 @@ import Settings from './Settings';
 import Dashboard from './Dashboard';
 
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
-    },
-  },
-  title: {
-    flexGrow: 1,
-  },
-  drawer: {
-    width: 240,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: 240,
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-  },
-  toolbar: theme.mixins.toolbar,
-}));
+
 
 export default function App() {
-  const theme = createTheme();
+  const theme = createTheme({
+  overrides: {
+    MuiDrawer: {
+      paper: {
+        backgroundColor: '#424242',
+      },
+    },
+    MuiButton: {
+      label: {
+        textTransform: 'none',
+      },
+    },
+    MuiTypography: {
+      h5: {
+        fontWeight: 500,
+      },
+    },
+    MuiListItemText: {
+      primary: {
+        fontWeight: 'bold',
+      },
+    },
+    MuiAppBar: {
+      colorPrimary: {
+        backgroundColor: '#303030',
+      },
+    },
+    MuiListItem: {
+      button: {
+        '&:hover': {
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        },
+      },
+    },
+  },
+  palette: {
+    primary: {
+      main: '#3f51b5',
+    },
+    secondary: {
+      main: '#f50057',
+    },
+  },
+});
  
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
